@@ -1,0 +1,16 @@
+{% block titulo %}
+Agregar un libro
+{% endblock titulo %}
+
+{% block contenido %}
+<form method="post">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    {{ formulario.errors }}
+    <input type="submit" value="Enviar" />
+   </form>
+
+   <a href="{% url 'lista_libros' %}">Volver a la lista</a>
+<br><br>
+{% endblock contenido %}
+   

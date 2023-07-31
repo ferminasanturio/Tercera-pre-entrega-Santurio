@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block titulo %} 
+Lista de libros disponibles
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>
+    Bienvenidos.
+    </h1>
+
+    <h3>Generos disponibles:</h3>
+    <ul>
+    {% for genero in generos %}
+    <li>
+        {{ genero.nombre }}
+    </li>
+    {% endfor %}
+    </ul>
+{% endblock contenido %} 
