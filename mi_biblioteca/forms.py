@@ -15,5 +15,5 @@ class GeneroFormulario(forms.Form):
 class AutorFormulario(forms.Form):
    apellido = forms.CharField(required=True, max_length=256)
    nombre = forms.CharField(required=True, max_length=256)
-   fecha_nacimiento = forms.DateField(null=True, blank=True)
-   bio = forms.TextField(blank=True)
+   fecha_nacimiento = forms.DateField()
+   bio = forms.CharField(required=True, max_length=256)
