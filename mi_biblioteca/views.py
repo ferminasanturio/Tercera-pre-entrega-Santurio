@@ -112,16 +112,23 @@ def crear_autores(request):
 def buscar_libros(request):
    if request.method == "POST":
        data = request.POST
-       busqueda = data["busqueda"]
+       busqueda = data.get("busqueda", "")
        libros = Libro.objects.filter(nombre__contains=busqueda)
        contexto = {
            "libros": libros,
        }
-       http_response = render(
-           request=request,
-           template_name='mi_biblioteca/lista_libros.html',
-           context=contexto,
-       )
-       return http_response
+       return render(
+            request=request,
+            template_name='mi_biblioteca/lista_libros.html',
+            context=contexto,
+        )
+       return render(
+            request=request,
+            template_name='mi_biblioteca/buscar_libros.html',
+        )
+   
+   
+        
+
 
 
